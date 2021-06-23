@@ -11,7 +11,7 @@ connectDB();
 const transactions = require('./routes/transactions');
 
 const app = express();
-
+app.use(express.json());
 app.use('/api/v1/transactions', transactions);
 
 const PORT = process.env.PORT || 5000;
@@ -19,6 +19,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(
   PORT,
   console.log(
-    `server running in  ${process.env.NODE_ENV} mode on port${5000}`.yellow.bold
+    `server running in  ${process.env.NODE_ENV} mode on port ${5000}`.yellow
+      .bold
   )
 );
