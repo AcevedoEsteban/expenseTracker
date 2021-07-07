@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
-import React, { useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 export const IncomeExpenses = () => {
   const { transactions } = useContext(GlobalContext);

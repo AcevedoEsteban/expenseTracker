@@ -4,6 +4,9 @@
   "description": "backend for expense tracker",
   "main": "server.js",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
@@ -18,26 +21,27 @@
   "bugs": {
     "url": "https://github.com/aEstebana/expenseTracker/issues"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "homepage": "https://github.com/aEstebana/expenseTracker#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "concurrently": "^6.2.0",
-    "dotenv": "^8.6.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.4",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-wesbos": "^1.0.1",
-    "eslint-plugin-html": "^6.1.0",
-    "eslint-plugin-import": "^2.23.3",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.2",
-    "prettier": "^2.1.1"
+    "concurrently": "^6.2.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.2"
   }
 }

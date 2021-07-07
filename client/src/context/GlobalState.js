@@ -1,13 +1,9 @@
-import React, { createContext, useReducer } from 'react';
-import AppReducer from './AppReducer';
+import React, { createContext, useReducer } from "react";
+import axios from "axios";
+import AppReducer from "./AppReducer";
 
 const initialState = {
-  transactions: [
-    { id: 1, text: 'Flower', amount: -20 },
-    { id: 2, text: 'Salary', amount: 300 },
-    { id: 3, text: 'Book', amount: -10 },
-    { id: 4, text: 'Camera', amount: 150 },
-  ],
+  transactions: [],
 };
 
 // create context
@@ -19,15 +15,28 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   // Action
+  // eslint-disable-next-line no-unused-vars
+  async function getTransactions() {
+    try {
+      const res = await axios.get("api/v1/transactions");
+
+      dispatch({
+        type: "GET_TRANSACTIONS",
+        payload: res.data.data,
+      });
+    } catch (err) {
+      console.log("hi");
+    }
+  }
   function deleteTransaction(id) {
     dispatch({
-      type: 'DELETE_TRANSACTION',
+      type: "DELETE_TRANSACTION",
       payload: id,
     });
   }
   function addTransaction(transaction) {
     dispatch({
-      type: 'ADD_TRANSACTION',
+      type: "ADD_TRANSACTION",
       payload: transaction,
     });
   }

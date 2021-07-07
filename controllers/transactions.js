@@ -1,4 +1,5 @@
-const Transaction = require('../models/Transaction');
+/* eslint-disable no-unused-vars */
+const Transaction = require("../models/Transaction");
 
 // @desc get all transactions
 // @ route GET /api/v1/transaction
@@ -8,13 +9,13 @@ exports.getTransactions = async (req, res, next) => {
     const transactions = await Transaction.find();
     return res.status(200).json({
       success: true,
-      count: transactions.length,
+      count: transactions.lengths,
       data: transactions,
     });
   } catch (err) {
     return res.status(500).json({
       success: false,
-      error: 'server error',
+      error: "server error",
     });
   }
 };
@@ -33,7 +34,7 @@ exports.addTransactions = async (req, res, next) => {
       data: transaction,
     });
   } catch (err) {
-    if (err.name === 'ValidationError') {
+    if (err.name === "ValidationError") {
       const messages = Object.values(err.errors).map((val) => val.message);
       return res.status(400).json({
         sucess: false,
@@ -43,20 +44,21 @@ exports.addTransactions = async (req, res, next) => {
 
     return res.send(500).json({
       success: false,
-      error: 'server error',
+      error: "server error",
     });
   }
 };
 // @desc DELETE transactions
 // @ route DELETE /api/v1/transaction:id
 // @ acess Public
+// eslint-disable-next-line no-undef
 exports.deleteTransactions = async (req, res, next) => {
   try {
     const transaction = await Transaction.findById(req.params.id);
     if (!transaction) {
       return res.status(404).json({
         success: false,
-        error: 'no transaction fund',
+        error: "no transaction fund",
       });
     }
     await transaction.remove();
@@ -67,7 +69,7 @@ exports.deleteTransactions = async (req, res, next) => {
   } catch (err) {
     return res.send(500).json({
       success: false,
-      error: 'server error',
+      error: "server error",
     });
   }
 };
