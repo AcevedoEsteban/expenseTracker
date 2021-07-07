@@ -4,6 +4,8 @@ import AppReducer from "./AppReducer";
 
 const initialState = {
   transactions: [],
+  error: null,
+  loading: true,
 };
 
 // create context
