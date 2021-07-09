@@ -27,7 +27,10 @@ export const GlobalProvider = ({ children }) => {
         payload: res.data.data,
       });
     } catch (err) {
-      console.log("hi");
+      dispatch({
+        type: "TRANSACTIONS_ERROR",
+        payload: err.response.data.error,
+      });
     }
   }
   function deleteTransaction(id) {
@@ -47,6 +50,9 @@ export const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         transactions: state.transactions,
+        error: state.error,
+        loading: state.loading,
+        getTransactions,
         deleteTransaction,
         addTransaction,
       }}
