@@ -11,5 +11,4 @@ const {
 router.route("/").get(getTransactions).post(addTransactions);
 
 router.route("/:id").delete(deleteTransactions);
-// eslint-disable-next-line no-undef
 module.exports = router;
