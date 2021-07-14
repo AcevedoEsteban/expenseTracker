@@ -21,19 +21,13 @@
   "bugs": {
     "url": "https://github.com/aEstebana/expenseTracker/issues"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "homepage": "https://github.com/aEstebana/expenseTracker#readme",
   "dependencies": {
     "colors": "^1.4.0",
     "debug": "^4.3.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.12.4",
+    "mongoose": "^5.13.2",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
