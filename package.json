@@ -4,10 +4,10 @@
   "description": "backend for expense tracker",
   "main": "server.js",
   "scripts": {
+    "start": "node server",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-    "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
