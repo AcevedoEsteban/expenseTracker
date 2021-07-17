@@ -4,8 +4,8 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 const morgan = require("morgan");
 const connectDB = require("./config/db");
-
-dotenv.config({ path: "./config/config.env" });
+const path = require("path");
+// dotenv.config({ path: "./config/config.env" });
 
 connectDB();
 
