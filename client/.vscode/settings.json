@@ -1,3 +1,45 @@
 {
-  "git.ignoreLimitWarning": true
-}
+  "git.ignoreLimitWarning": true,
+
+  
+    "workbench.colorTheme": "Ayu Mirage",
+    "react-native.packager.port": 19001,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "window.zoomLevel": -2,
+    "mssql.connections": [
+      {
+        "server": "{{put-server-name-here}}",
+        "database": "{{put-database-name-here}}",
+        "user": "{{put-username-here}}",
+        "password": ""
+      }
+    ],
+    "editor.formatOnSave": true,
+    "eslint.probe": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html",
+      "vue",
+      "markdown",
+      "jsx"
+    ],
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.jsxBracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.requireConfig": true,
+    "json.maxItemsComputed": 10000,
+    "auto-rename-tag.activationOnLanguage": [
+    
+      "*"
+    ],
+    
+  }
+  
+
